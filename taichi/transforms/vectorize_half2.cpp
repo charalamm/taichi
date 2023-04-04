@@ -138,11 +138,11 @@ class Half2VectorizationAnalyzer : public BasicStmtVisitor {
 
   std::unordered_set<AtomicOpStmt *> should_remove;
   std::map<AtomicOpStmt *, AtomicOpStmt *>
-      should_replace_extern;  // self: other
+      should_replace_extern;       // self: other
   std::map<AtomicOpStmt *, AtomicOpStmt *>
       should_replace_global_temp;  // self: other
   std::map<AtomicOpStmt *, AtomicOpStmt *>
-      should_replace_get_ch;  // self: other
+      should_replace_get_ch;       // self: other
 
   void visit(AtomicOpStmt *stmt) override {
     // opt-out
@@ -314,11 +314,11 @@ class Half2Vectorize : public BasicStmtVisitor {
 
   std::unordered_set<AtomicOpStmt *> should_remove;
   std::map<AtomicOpStmt *, AtomicOpStmt *>
-      should_replace_extern;  // self: other
+      should_replace_extern;       // self: other
   std::map<AtomicOpStmt *, AtomicOpStmt *>
       should_replace_global_temp;  // self: other
   std::map<AtomicOpStmt *, AtomicOpStmt *>
-      should_replace_get_ch;  // self: other
+      should_replace_get_ch;       // self: other
 
   void visit(AtomicOpStmt *stmt) override {
     if (should_remove.find(stmt) != should_remove.end()) {

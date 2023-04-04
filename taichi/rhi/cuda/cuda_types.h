@@ -59,9 +59,9 @@ typedef enum CUfunction_attribute_enum {
  * 3D array descriptor
  */
 typedef struct CUDA_ARRAY3D_DESCRIPTOR_st {
-  size_t Width;  /**< Width of 3D array */
-  size_t Height; /**< Height of 3D array */
-  size_t Depth;  /**< Depth of 3D array */
+  size_t Width;             /**< Width of 3D array */
+  size_t Height;            /**< Height of 3D array */
+  size_t Depth;             /**< Depth of 3D array */
 
   CUarray_format Format;    /**< Array format */
   unsigned int NumChannels; /**< Channels per array element */

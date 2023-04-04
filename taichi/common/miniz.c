@@ -543,9 +543,9 @@ int mz_inflate(mz_streamp pStream, int flush) {
                                uncompressed data left in the output dictionary -
                                oh well). */
     else if ((status == TINFL_STATUS_NEEDS_MORE_INPUT) && (!orig_avail_in))
-      return MZ_BUF_ERROR; /* Signal caller that we can't make forward progress
-                              without supplying more input or by setting flush
-                              to MZ_FINISH. */
+      return MZ_BUF_ERROR;  /* Signal caller that we can't make forward progress
+                               without supplying more input or by setting flush
+                               to MZ_FINISH. */
     else if (flush == MZ_FINISH) {
       /* The output buffer MUST be large to hold the remaining uncompressed data
        * when flush==MZ_FINISH. */
@@ -3295,7 +3295,7 @@ static int mz_stat64(const char *path, struct __stat64 *buffer) {
 
 #else
 #pragma message( \
-    "Using fopen, ftello, fseeko, stat() etc. path for file I/O - this path may not support large files.")
+        "Using fopen, ftello, fseeko, stat() etc. path for file I/O - this path may not support large files.")
 #ifndef MINIZ_NO_TIME
 #include <utime.h>
 #endif

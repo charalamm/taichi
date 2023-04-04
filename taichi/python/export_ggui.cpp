@@ -53,8 +53,8 @@ py::array_t<float> mat4_to_nparray(glm::mat4 mat) {
   return py::array_t<float>(
       py::detail::any_container<ssize_t>({4, 4}),  // shape (rows, cols)
       py::detail::any_container<ssize_t>(
-          {sizeof(float) * 4, sizeof(float)}),  // strides in bytes
-      glm::value_ptr(mat),                      // buffer pointer
+          {sizeof(float) * 4, sizeof(float)}),     // strides in bytes
+      glm::value_ptr(mat),                         // buffer pointer
       nullptr);
 }
 

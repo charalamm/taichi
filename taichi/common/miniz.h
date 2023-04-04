@@ -374,22 +374,22 @@ typedef struct mz_stream_s {
   unsigned int avail_in;        /* number of bytes available at next_in */
   mz_ulong total_in;            /* total number of bytes consumed so far */
 
-  unsigned char *next_out; /* pointer to next byte to write */
-  unsigned int avail_out;  /* number of bytes that can be written to next_out */
-  mz_ulong total_out;      /* total number of bytes produced so far */
+  unsigned char *next_out;      /* pointer to next byte to write */
+  unsigned int avail_out; /* number of bytes that can be written to next_out */
+  mz_ulong total_out;     /* total number of bytes produced so far */
 
-  char *msg; /* error msg (unused) */
+  char *msg;              /* error msg (unused) */
   struct mz_internal_state
-      *state; /* internal state, allocated by zalloc/zfree */
+      *state;             /* internal state, allocated by zalloc/zfree */
 
   mz_alloc_func
       zalloc; /* optional heap allocation function (defaults to malloc) */
   mz_free_func zfree; /* optional heap free function (defaults to free) */
   void *opaque;       /* heap alloc function user pointer */
 
-  int data_type;     /* data_type (unused) */
-  mz_ulong adler;    /* adler32 of the source or uncompressed data */
-  mz_ulong reserved; /* not used */
+  int data_type;      /* data_type (unused) */
+  mz_ulong adler;     /* adler32 of the source or uncompressed data */
+  mz_ulong reserved;  /* not used */
 } mz_stream;
 
 typedef mz_stream *mz_streamp;

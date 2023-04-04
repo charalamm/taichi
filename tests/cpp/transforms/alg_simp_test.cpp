@@ -73,7 +73,7 @@ TEST_F(AlgebraicSimplicationTest, SimplifyMultiplyOne) {
                    CompileConfig());  // should eliminate mul, div, sub
   irpass::die(block.get());           // should eliminate zero, one
 
-  EXPECT_EQ(block->size(), 4);  // two addresses, one load, one store
+  EXPECT_EQ(block->size(), 4);        // two addresses, one load, one store
   EXPECT_TRUE((*block)[0]->is<GlobalTemporaryStmt>());
 }
 
@@ -136,7 +136,7 @@ TEST_F(AlgebraicSimplicationTest, SimplifyMultiplyZeroFastMath) {
                    config_with_fast_math);  // should eliminate mul, add
   irpass::die(block.get());                 // should eliminate zero, load
 
-  EXPECT_EQ(block->size(), 3);  // one address, one one, one store
+  EXPECT_EQ(block->size(), 3);              // one address, one one, one store
 }
 
 TEST_F(AlgebraicSimplicationTest, SimplifyAndMinusOne) {

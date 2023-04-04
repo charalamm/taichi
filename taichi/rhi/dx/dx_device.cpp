@@ -367,8 +367,8 @@ HRESULT create_compute_device(ID3D11Device **out_device,
 
   AdjustWindowRect(&window_rect, WS_OVERLAPPEDWINDOW, false);
 
-  hWnd = CreateWindowEx(0,           // Optional window styles.
-                        CLASS_NAME,  // Window class
+  hWnd = CreateWindowEx(0,                    // Optional window styles.
+                        CLASS_NAME,           // Window class
                         std::wstring(window_name.begin(), window_name.end())
                             .data(),          // Window text
                         WS_OVERLAPPEDWINDOW,  // Window style

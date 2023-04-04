@@ -595,10 +595,10 @@ class ExternalFuncCallStmt : public Stmt,
   enum Type { SHARED_OBJECT = 0, ASSEMBLY = 1, BITCODE = 2 };
 
   Type type;
-  void *so_func;            // SHARED_OBJECT
-  std::string asm_source;   // ASM
-  std::string bc_filename;  // BITCODE
-  std::string bc_funcname;  // BITCODE
+  void *so_func;                     // SHARED_OBJECT
+  std::string asm_source;            // ASM
+  std::string bc_filename;           // BITCODE
+  std::string bc_funcname;           // BITCODE
   std::vector<Stmt *> arg_stmts;
   std::vector<Stmt *> output_stmts;  // BITCODE doesn't use this
 
@@ -1338,9 +1338,9 @@ class OffloadedStmt : public Stmt {
   std::unordered_map<mesh::MeshElementType, Stmt *>
       total_offset_local;  // |total_offset[idx]|
   std::unordered_map<mesh::MeshElementType, Stmt *>
-      owned_num_local;  // |owned_offset[idx+1] - owned_offset[idx]|
+      owned_num_local;     // |owned_offset[idx+1] - owned_offset[idx]|
   std::unordered_map<mesh::MeshElementType, Stmt *>
-      total_num_local;  // |total_offset[idx+1] - total_offset[idx]|
+      total_num_local;     // |total_offset[idx+1] - total_offset[idx]|
 
   std::vector<int> index_offsets;
 

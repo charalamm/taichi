@@ -169,7 +169,7 @@ TEST_F(DetermineAdStackSizeTest, EmptyNodes) {
   }
   {
     auto _ = builder.get_if_guard(if_stmt, false);
-    builder.get_int32(3);  // avoid CFGNode being deleted
+    builder.get_int32(3);             // avoid CFGNode being deleted
   }
   builder.ad_stack_push(stack, one);  // stack contains [1, 1] now
 

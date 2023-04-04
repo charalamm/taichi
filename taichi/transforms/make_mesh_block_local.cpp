@@ -417,9 +417,9 @@ MakeMeshBlockLocal::MakeMeshBlockLocal(OffloadedStmt *offload,
   // to cache
   bool auto_mesh_local = config.experimental_auto_mesh_local;
   if (offload->major_to_types.size() !=
-          1 ||  // not support multiple major relations yet
+          1 ||                // not support multiple major relations yet
       offload->minor_relation_types.size() >
-          0 ||  // not support minor relations yet
+          0 ||                // not support minor relations yet
       offload->mem_access_opt.get_snodes_with_flag(SNodeAccessFlag::mesh_local)
               .size() > 0) {  // disable when user determine which attributes to
                               // be cached manually

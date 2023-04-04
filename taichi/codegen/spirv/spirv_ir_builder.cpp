@@ -1109,8 +1109,8 @@ Value IRBuilder::cast(const SType &dst_type, Value value) {
                to.to_string());
       return Value();
     }
-  } else if (to->is_primitive(PrimitiveTypeID::u1)) {  // Bool
-    if (is_integral(from) && is_signed(from)) {        // Int -> Bool
+  } else if (to->is_primitive(PrimitiveTypeID::u1)) {     // Bool
+    if (is_integral(from) && is_signed(from)) {           // Int -> Bool
       return ne(value, int_immediate_number(value.stype, 0));
     } else if (is_integral(from) && is_unsigned(from)) {  // UInt -> Bool
       return ne(value, uint_immediate_number(value.stype, 0));
@@ -1178,7 +1178,7 @@ Value IRBuilder::cast(const SType &dst_type, Value value) {
              is_real(to)) {  // Int -> Float
     return make_value(spv::OpConvertSToF, dst_type, value);
   } else if (is_integral(from) && is_unsigned(from) &&
-             is_real(to)) {  // UInt -> Float
+             is_real(to)) {                   // UInt -> Float
     return make_value(spv::OpConvertUToF, dst_type, value);
   } else if (is_real(from) && is_real(to)) {  // Float -> Float
     return make_value(spv::OpFConvert, dst_type, value);

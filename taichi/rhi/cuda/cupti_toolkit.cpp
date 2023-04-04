@@ -499,7 +499,7 @@ bool get_counter_data_prefix_image(
   return true;
 }
 
-#else  // CUDA_VERSION < 11040
+#else   // CUDA_VERSION < 11040
 
 // copy from : CUPTI/samples/extensions/src/profilerhost_util/Metric.cpp
 bool get_raw_metric_requests(
