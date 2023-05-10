@@ -11,6 +11,8 @@ export PYTHONUNBUFFERED=1
 python3 .github/workflows/scripts/build.py --permissive --write-env=/tmp/ti-env.sh
 . /tmp/ti-env.sh
 
+export TI_DEVICE_MEMORY_FRACTION=0.8
+
 # TODO: hard code Android NDK path in Docker image, should be handled by build.py
 export ANDROID_NDK_ROOT=/android-sdk/ndk-bundle
 
