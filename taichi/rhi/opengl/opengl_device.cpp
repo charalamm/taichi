@@ -644,18 +644,9 @@ RhiResult GLDevice::create_pipeline(Pipeline **out_pipeline,
                                     PipelineCache *cache) noexcept {
   try {
     *out_pipeline = new GLPipeline(src, name);
-  } catch (std::bad_alloc &e) {
+  } catch (std::bad_alloc &) {
     *out_pipeline = nullptr;
-    RHI_LOG_ERROR(e.what());
     return RhiResult::out_of_memory;
-  } catch (std::invalid_argument &e) {
-    *out_pipeline = nullptr;
-    RHI_LOG_ERROR(e.what());
-    return RhiResult::invalid_usage;
-  } catch (std::runtime_error &e) {
-    *out_pipeline = nullptr;
-    RHI_LOG_ERROR(e.what());
-    return RhiResult::error;
   }
   return RhiResult::success;
 }
